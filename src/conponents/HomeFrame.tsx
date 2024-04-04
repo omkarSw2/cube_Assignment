@@ -16,7 +16,7 @@ const HomeFrame = () => {
 
   const [page, setPage] = useState(1);
   useEffect(() => {
-    fetchData().then((res) => setData([...data, ...res]));
+    fetchData(page).then((res) => setData([...data, ...res]));
   }, [page]);
   return (
     <div className="grid grid-cols-6">
