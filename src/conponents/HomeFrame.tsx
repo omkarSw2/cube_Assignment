@@ -4,7 +4,7 @@ import axios from "axios";
 import ProductList from "./ProductList";
 import { ProductProps } from "../../types";
 
-const fetchData = async (page) => {
+const fetchData = async (page: number) => {
   const response = await axios.get(
     `https://winter-accurate-attempt.glitch.me/users?_page=${page}`
   );
@@ -12,7 +12,8 @@ const fetchData = async (page) => {
 };
 
 const HomeFrame = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<ProductProps[]>([]);
+
   const [page, setPage] = useState(1);
   useEffect(() => {
     fetchData().then((res) => setData([...data, ...res]));
