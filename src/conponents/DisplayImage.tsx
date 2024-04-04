@@ -28,7 +28,7 @@ const DisplayImage = () => {
   const [images, setImages] = useState([]);
   const i = Array(9).fill(1);
   const [seconds, setSeconds] = useState(11);
-//   console.log("seconds", seconds);
+  //   console.log("seconds", seconds);
 
   useEffect(() => {
     setIsLoading(true);
@@ -71,8 +71,8 @@ const DisplayImage = () => {
   if (isLoading) {
     return (
       <>
-        {i?.map((item: string, ind: number) => (
-          <ImageCardSkeleton key={ind} {...item} />
+        {i?.map((_, ind: number) => (
+          <ImageCardSkeleton key={ind} />
         ))}
       </>
     );
