@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ImageCard from "../conponents/imageCard";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ProductProps } from "../../types";
@@ -18,7 +18,7 @@ const fetchData = async (id: string) => {
 };
 const SinglePage = () => {
   const { id } = useParams<{ id: string }>();
-  const [userData, setUserData] = useState<ProductProps>({});
+  const [userData, setUserData] = useState<ProductProps | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
